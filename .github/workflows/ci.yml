@@ -10,3 +10,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: docker://dvcorg/cml-py3:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Packages
+        run: make install
+      - name: Format
+        run: make format
+      - name: Train
+        run: make train
+      - name: Evaluation
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: make eval
