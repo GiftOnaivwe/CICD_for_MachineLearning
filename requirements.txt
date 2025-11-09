@@ -2,5 +2,6 @@ pandas
 scikit-learn
 numpy
 matplotlib
-skops
+gradio
+git+https://github.com/skops-dev/skops.git
 black
